@@ -1,47 +1,47 @@
 package pe.edu.tecsup.productosapi.services;
 
 import java.util.List;
+
 import javax.persistence.EntityNotFoundException;
 import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 import pe.edu.tecsup.productosapi.entities.Producto;
-import pe.edu.tecsup.productosapi.repositories.ProductoRepository;
+import pe.edu.tecsup.productosapi.repositories.ProductoRespository;
 
 @Service
 @Transactional
-public class ProductoServiceImpl implements ProductoService {
+public class ProductoServiceImpl implements ProductoService{
 	
 	@Autowired
-	private ProductoRepository productoRepository;
+	private ProductoRespository productRespository;
 
 	@Override
 	public List<Producto> findAll() {
 		// TODO Auto-generated method stub
-		return productoRepository.findAll();
+		return productRespository.findAll();
 	}
 
 	@Override
 	public Producto findById(Long id) {
 		// TODO Auto-generated method stub
-		return productoRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("No existe registro"));
+		return productRespository.findById(id).orElseThrow(()-> new EntityNotFoundException("No existe registro"));
 	}
 
 	@Override
 	public void save(Producto producto) {
 		// TODO Auto-generated method stub
-		productoRepository.save(producto);
+		productRespository.save(producto);
 	}
 
 	@Override
 	public void deleteById(Long id) {
 		// TODO Auto-generated method stub
-		productoRepository.deleteById(id);
+		productRespository.deleteById(id);
 	}
+	
+	
 
-	@Override
-	public Producto findByName(String name) {
-		// TODO Auto-generated method stub
-		return productoRepository.searchByNameLike(name);
-	}
 }

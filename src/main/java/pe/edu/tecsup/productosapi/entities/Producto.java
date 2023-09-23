@@ -6,16 +6,23 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+
 @Entity
 @Table(name = "productos")
 public class Producto {
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	
 	private String nombre;
+	
 	private Double precio;
+	
 	private String imagen;
+	
 	private String detalles;
+	
 	private String estado;
 
 	public Long getId() {
@@ -68,6 +75,10 @@ public class Producto {
 
 	@Override
 	public String toString() {
-		return "Producto [id=" + id + ", nombre=" + nombre + ", precio=" + precio + ", imagen=" + imagen + ", detalles=" + detalles + ", estado=" + estado + "]";
+		return "Producto [id=" + id + ", nombre=" + nombre + ", precio=" + precio + ", imagen=" + imagen + ", detalles="
+				+ detalles + ", estado=" + estado + "]";
 	}
+	
+	
+	
 }
