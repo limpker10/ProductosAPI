@@ -15,12 +15,14 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import pe.edu.tecsup.productosapi.entities.Producto;
 import pe.edu.tecsup.productosapi.services.ProductoService;
 
 @RestController
+@RequestMapping("/api")
 public class ProductoController {
 
 	private static final Logger Logger = LoggerFactory.getLogger(ProductoController.class); 
